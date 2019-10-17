@@ -5,6 +5,18 @@ const saltRounds = 10;
 
 const cors = require('cors');
 
+const knex = require('knex')
+
+const pgDatabase = knex({
+    client: 'pg',
+    connection: {
+      host : '127.0.0.1',
+      user : 'postgres',
+      password : 'penbed29',
+      database : 'face-recognition-db'
+    }
+  });
+
 const app = express();
 
 app.use(bodyParser.json());
@@ -70,14 +82,11 @@ app.post('/register', (req, res) => {
         console.log(hash);
     });
 
-    database.users.push({
-        id: '125',
-        name: name,
+    pgDatabase('users').insert({
         email: email,
-        // password: password, removed for security
-        entries: 0,
+        name: name,
         joined: new Date()
-    })
+    }).then(console.log)
     res.json(database.users[database.users.length - 1])
 })
 
