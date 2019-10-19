@@ -30,11 +30,8 @@ app.get('/', (req, res) => {
 })
 
 app.post('/signin', (req, res) => { signin.handleSignIn(req, res, pgDatabase, bcrypt, saltRounds)})
-
 app.post('/register', (req, res) => { register.handleRegister(req, res, pgDatabase, bcrypt, saltRounds)})
-
 app.get('/profile/:id', (req, res) => {profile.handleProfileGet(req, res, pgDatabase)})
-
 app.put('/image', (req, res) => {image.handleImage(req, res, pgDatabase)});
 
 app.listen(3000, () => {
