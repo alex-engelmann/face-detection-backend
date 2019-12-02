@@ -36,7 +36,8 @@ app.get('/profile/:id', (req, res) => {profile.handleProfileGet(req, res, pgData
 app.put('/image', (req, res) => {image.handleImage(req, res, pgDatabase)});
 app.post('/imageurl', (req, res) => {image.handleApiCall(req, res)});
 
+const port = process.env.PORT || 3000;
 
-app.listen(3000, () => {
-    console.log('app is running on port 3000')
+app.listen(port , () => {
+    console.log('app is running on port ' + port)
 })
