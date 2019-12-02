@@ -14,10 +14,13 @@ const image = require('./controllers/image');
 const pgDatabase = knex({
     client: 'pg',
     connection: {
-        host: '127.0.0.1',
-        user: process.env.DB_USER,
-        password: process.env.DB_PASS,
-        database: 'face-detection-db'
+        host: process.env.DATABASE_URL,
+        ssl: true,
+        // below values are for local deployment
+        // host: '127.0.0.1'
+        // user: process.env.DB_USER,
+        // password: process.env.DB_PASS,
+        // database: 'face-detection-db'
     }
 });
 
