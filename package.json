@@ -1,11 +1,11 @@
 {
-  "name": "face-recognition-api",
+  "name": "face-detection-api",
   "version": "1.0.0",
   "engines": {
     "node": "10.16.3",
     "npm": "6.9.0"
   },
-  "description": "the api for a face recognition app",
+  "description": "the api for a face detection app",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
