@@ -30,7 +30,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 app.get('/', (req, res) => {
-    res.send('you have reached a page');
+    res.send('You have reached the server');
 })
 
 app.post('/signin', (req, res) => { signin.handleSignIn(req, res, pgDatabase, bcrypt, saltRounds)})
