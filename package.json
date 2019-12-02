@@ -1,6 +1,10 @@
 {
   "name": "face-recognition-api",
   "version": "1.0.0",
+  "engines": {
+    "node": "10.16.3",
+    "npm": "6.9.0"
+  },
   "description": "the api for a face recognition app",
   "main": "index.js",
   "scripts": {
